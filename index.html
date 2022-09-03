@@ -8,17 +8,49 @@
         <title>Document</title>
     </head>
     <body>
-        <!-- <svg class="circle-container" viewBox="2 -2 28 36" xmlns="http://www.w3.org/2000/svg">
-            <circle class="circle-container__background" r="16" cx="16" cy="16"></circle>
-            <circle
-              class="circle-container__progress"
-              r="16"
-              cx="16"
-              cy="16"
-              style="stroke-dashoffset: 20"
-            ></circle>
-          </svg> -->
-
+        <div></div>
+        <!-- <svg
+            viewBox="2 -3 30 40"
+            width="200px"
+            height="200px"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+        <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 190 50"
+        to="360 190 50"
+        dur="4s"
+        repeatCount="indefinite"
+    />
+            <path
+                fill="none"
+                stroke-width="3px"
+                stroke="#e9e9e9"
+                d="
+              M 0, 16
+              a 16,16 0 1,1 32,0
+              a 16,16 0 1,1 -32,0
+            "
+            />
+           
+            <path
+                fill="none"
+                stroke-width="3px"
+                stroke="red"
+                stroke-dashoffset="100"
+                stroke-dasharray="100 100"
+                ;
+                d="
+              M 0, 16
+              a 16,16 0 1,1 32,0
+              a 16,16 0 1,1 -32,0
+            "
+            />
+        </svg> -->
+        <input id="progress" type="number"  min="1" max="100" name="foo" placeholder="input progress" />
+        <script src="Path.js"></script>
+        <script src="Circle.js"></script>
         <script src="main.js"></script>
     </body>
 </html>
