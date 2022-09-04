@@ -16,7 +16,7 @@ const CircularProgressBar = function () {
             stroke: '#005BFF',
             strokeWidth: '3px',
             strokeDasharray: '100 100',
-            strokeDashoffset: '33',
+            strokeDashoffset: '35',
         },
         circleContainer: {
             d: 'M 0, 16 a 16,16 0 1,1 32,0 a 16,16 0 1,1 -32,0',
@@ -33,7 +33,7 @@ const CircularProgressBar = function () {
     let element = document.querySelector('.progress');
 
     this._svgView = this._initializeSvg(this._circleConfig.svgStyle);
-    
+
     let circleContainer = this._createElement('path', this._circleConfig.circleContainer);
     this._circle = this._createElement('path', this._circleConfig.circle);
 
@@ -42,7 +42,7 @@ const CircularProgressBar = function () {
 }
 
 
-CircularProgressBar.prototype._createElement = function(node, props) {
+CircularProgressBar.prototype._createElement = function (node, props) {
     node = document.createElementNS('http://www.w3.org/2000/svg', node);
 
     for (let elem in props) {
@@ -64,7 +64,7 @@ CircularProgressBar.prototype._initializeSvg = function (opt) {
     return svg;
 }
 
-CircularProgressBar.prototype._animateProgress = function(path, value) {
+CircularProgressBar.prototype._animateProgress = function (path, value) {
     let length = path.getTotalLength();
 
     path.style.transition = path.style.WebkitTransition =
@@ -77,7 +77,7 @@ CircularProgressBar.prototype._animateProgress = function(path, value) {
     path.style.strokeDashoffset = value;
 }
 
-CircularProgressBar.prototype._rotate = function(path, animate) {
+CircularProgressBar.prototype._rotate = function (path, animate) {
     let animateTransform = document.createElementNS("http://www.w3.org/2000/svg", "animateTransform");
 
     if (animate) {

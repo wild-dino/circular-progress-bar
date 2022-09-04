@@ -24,6 +24,21 @@
     align-items: center;
 }
 
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    display: none;
+}
+
+input[type=number] {
+    text-align: center;
+    width: 28px;
+    height: 15px;
+    border-radius: 100px;
+    border: solid #000 1px;
+    padding: 5px;
+}
+
 .switch {
     cursor: pointer;
     text-indent: -9999px;
@@ -44,7 +59,7 @@
     height: 22px;
     background: #fff;
     border-radius: 90px;
-    transition: 0.3s;
+    transition: 300ms;
 }
 
 input:checked+.switch {
@@ -58,20 +73,6 @@ input:checked+.switch:after {
 
 .switch:active:after {
     width: 40px;
-}
-
-input[type=checkbox] {
-    height: 0;
-    width: 0;
-    display: none;
-}
-
-input[type=number] {
-    width: 28px;
-    height: 15px;
-    border-radius: 100px;
-    border: solid #000 1px;
-    padding: 5px;
 }
 
 .caption {
