@@ -1,22 +1,32 @@
-let input = document.getElementById('progress');
-let checkbox = document.getElementById('animate');
+const input = document.getElementById('progress');
+const animateCheckbox = document.getElementById('animate');
+const hideCheckbox = document.getElementById('hidden');
 
-let myCircle = new Circle(); 
+let myProgressBar = new CircularProgressBar(); 
 
 const doThing = () => {
-    myCircle.setStrokeDashoffset(input.value);
+    myProgressBar.setProgress(input.value);
 }
 
 const animateRotation = () => {
-    if(checkbox.checked) {
-        myCircle.runRotate(true);
+    if(animateCheckbox.checked) {
+        myProgressBar.runRotate(true);
     } else {
-        myCircle.runRotate(false);
+        myProgressBar.runRotate(false);
+    }
+}
+
+const changeVisibility = () => {
+    if(hideCheckbox.checked) {
+        myProgressBar.hide(true);
+    } else {
+        myProgressBar.hide(false);
     }
 }
 
 input.addEventListener('change', doThing);
-checkbox.addEventListener('change', animateRotation)
+animateCheckbox.addEventListener('change', animateRotation);
+hideCheckbox.addEventListener('change', changeVisibility);
 
 
 

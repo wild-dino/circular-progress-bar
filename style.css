@@ -1,41 +1,80 @@
-/* 
-.circle-container {
-    width: 200px;
-    height:200px;
-    animation: rotate 3s infinite;
-} 
-
-.circle-container__background {
-    fill: none;
-    stroke: var(--default-color);
-    stroke-width: 3px;
+.progress {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 250px));
+    align-content: center;
 }
 
-.circle-container__progress {
-    fill: none;
-    stroke-linecap: butt;
-    stroke: seagreen;
-    stroke-width: 3px;
-    stroke-dasharray: 100 100;
-    animation: fill 3s ease-in-out;
-}  */
-
-/* @keyframes fill {
-    from {
-        stroke-dashoffset: 100;
-    }
-
-    to {
-        stroke-dashoffset: 30;
-    }
+.input-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 auto;
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(-90deg);
-    }
+.input-row__item {
+    width: 100%;
+    max-width: 50vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: flex-start;
+    align-items: center;
+}
 
-    to {
-        transform: rotate(270deg)
-    }
-} */
+.switch {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 40px;
+    height: 26px;
+    background: #E0E6EF;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.switch:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked+.switch {
+    background: #005BFF;
+}
+
+input:checked+.switch:after {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+}
+
+.switch:active:after {
+    width: 40px;
+}
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    display: none;
+}
+
+input[type=number] {
+    width: 28px;
+    height: 15px;
+    border-radius: 100px;
+    border: solid #000 1px;
+    padding: 5px;
+}
+
+.caption {
+    font-family: sans-serif;
+    font-weight: 700;
+}
