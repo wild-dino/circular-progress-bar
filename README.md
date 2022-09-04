@@ -1,2 +1,2 @@
 ### Preview:
-![Иллюстрация к проекту](https://user-images.githubusercontent.com/75693419/188328844-5027e2a5-4bed-4678-96ed-a80661f77c15.jpg)
+![Иллюстрация к проекту](https://user-images.githubusercontent.com/75693419/188328929-4438b9c6-925a-4b82-b1d5-fa84ece0774e.jpg)
