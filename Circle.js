@@ -31,11 +31,10 @@ const Circle = function() {
 
     this.circle = this._createElement('path', _circleConfig.circle);
 
-    svgView.append(circleContainer, this.circle);
+    svgView.prepend(circleContainer, this.circle);
 
     this.animateCircleProgress = new Animate(this.circle);
-    let animateCircle = new Animate(this.circle);
-    animateCircle.rotate(this.circle);
+    this.animateRotation = new Animate(this.circle);
 }
 
 
@@ -54,7 +53,7 @@ Circle.prototype._initializeSvg = function (opt) {
     svg.setAttribute("viewBox", "2 -2 30 40");
     svg.style.transform = 'rotate(90deg)';
 
-    document.body.appendChild(svg);
+    document.body.prepend(svg);
 
     return svg;
 }
@@ -68,4 +67,8 @@ Circle.prototype.setStrokeDashoffset = function(value) {
         this._strokeDashoffset = 100-value;
         this.animateCircleProgress.animateProgress(this.circle, 100-value);
     }
+}
+
+Circle.prototype.runRotate = function(animate) {
+    this.animateRotation.rotate(this.circle, animate);
 }

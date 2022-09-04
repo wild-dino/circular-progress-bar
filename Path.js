@@ -13,7 +13,7 @@ Animate.prototype.animateProgress = function animateProgress(path, value) {
     let length = path.getTotalLength();
 
     path.style.transition = path.style.WebkitTransition =
-    'stroke-dashoffset 2s ease-in-out';
+        'stroke-dashoffset 2s ease-in-out';
 
     path.style.strokeDasharray = length + ' ' + length;
     path.style.strokeDashoffset = value;
@@ -22,17 +22,19 @@ Animate.prototype.animateProgress = function animateProgress(path, value) {
     path.style.strokeDashoffset = value;
 }
 
-Animate.prototype.rotate = function rotate(path) {
-    let start = false;
-    if (start) {
-        let animateTransform = document.createElementNS("http://www.w3.org/2000/svg", "animateTransform");
+Animate.prototype.rotate = function rotate(path, animate) {
+    let animateTransform = document.createElementNS("http://www.w3.org/2000/svg", "animateTransform");
 
+    if (animate) {
         for (let elem in this._animateConfig) {
             animateTransform.setAttributeNS(null, elem, this._animateConfig[elem]);
         }
 
         path.appendChild(animateTransform);
         animateTransform.beginElement();
+
+    } else {
+        path.removeChild(path.firstElementChild)
     }
 }
 
