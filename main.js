@@ -4,7 +4,7 @@ const hideCheckbox = document.getElementById('hidden');
 
 let myProgressBar = new CircularProgressBar(); 
 
-const doThing = () => {
+const changeProgress = () => {
     myProgressBar.setProgress(input.value);
 }
 
@@ -24,7 +24,7 @@ const changeVisibility = () => {
     }
 }
 
-input.addEventListener('change', doThing);
+input.addEventListener('change', changeProgress);
 animateCheckbox.addEventListener('change', animateRotation);
 hideCheckbox.addEventListener('change', changeVisibility);
 
